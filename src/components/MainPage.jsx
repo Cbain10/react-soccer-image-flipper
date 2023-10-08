@@ -1,22 +1,18 @@
 import { useState } from 'react';
 import './MainPage.css';
+import { data } from '../data/data';
 
 export const MainPage = () => {
 
-    const barcaTeam = 'https://ichef.bbci.co.uk/onesport/cps/624/cpsprodpb/1734F/production/_129655059_gettyimages-114914970.jpg';
-    const barcaLogo = 'https://neonize.gumlet.io/wp-content/uploads/2023/03/Barcelona-Logo-Neon-Sign_light_on-off.gif';
-    const cityTeam = 'https://www.si.com/.image/t_share/MTkxMzU5ODUzNTY2NTAyNDk4/imago1013579934h.jpg';
-    const cityLogo = 'https://mir-s3-cdn-cf.behance.net/projects/404/90ed01176575953.Y3JvcCw4MDgsNjMyLDAsMA.png';
-    const bayernURL = 'https://wallpapers.com/images/featured/bayern-munich-6o9jdslyd3fe267f.jpg';
-    const chelseaURL = 'https://wallpapers.com/images/featured/chelsea-fc-logo-esvpoici90jl4fpx.jpg';
-    const interURL = 'https://seeklogo.com/images/I/Inter_FC-logo-A600D6151E-seeklogo.com.png';
-    const brightonURL = 'https://i.pinimg.com/originals/a8/3c/fa/a83cfad00ee6a7d9a3faffea5b70783e.png';
-    const benficaURL = 'https://images7.alphacoders.com/989/989960.jpg';
-    const juventusURL = 'https://c8.alamy.com/comp/DC36TJ/juventus-DC36TJ.jpg';
-    const unitedURL = 'https://wallpapers.com/images/featured/manchester-united-logo-e45hfwpfz9aewlv4.jpg';
-
-    const [barcaURL, setBarcaUrl] = useState(barcaLogo);
-    const [cityURL, setCityUrl] = useState(cityLogo);
+    const [barcaURL, setBarcaUrl] = useState(data.barcaLogo);
+    const [cityURL, setCityUrl] = useState(data.cityLogo);
+    const [bayernURL, setBayernURL] = useState(data.bayernLogo);
+    const [chelseaURL, setChelseaURL] = useState(data.chelseaLogo);
+    const [interURL, setInterURL] = useState(data.interLogo);
+    const [brightonURL, setBrightonURL] = useState(data.brightonLogo);
+    const [unitedURL, setUnitedURL] = useState(data.unitedLogo);
+    const [liverpoolURL, setLiverpoolURL] = useState(data.liverpoolLogo);
+    const [juventusURL, setJuventusURL] = useState(data.juventusLogo);
 
 
     const handleChangeImage = (url, setState) => {
@@ -33,8 +29,8 @@ export const MainPage = () => {
                 src={barcaURL}
                 height={200}
                 width={200}
-                onMouseOver={() => handleChangeImage(barcaTeam, setBarcaUrl)}
-                onMouseLeave={() => handleChangeImage(barcaLogo, setBarcaUrl)}
+                onMouseOver={() => handleChangeImage(data.barcaTeam, setBarcaUrl)}
+                onMouseLeave={() => handleChangeImage(data.barcaLogo, setBarcaUrl)}
                 alt='barca'
             />
             <img
@@ -42,8 +38,8 @@ export const MainPage = () => {
                 src={cityURL}
                 height={200}
                 width={200}
-                onMouseOver={() => handleChangeImage(cityTeam, setCityUrl)}
-                onMouseLeave={() => handleChangeImage(cityLogo, setCityUrl)}
+                onMouseOver={() => handleChangeImage(data.cityTeam, setCityUrl)}
+                onMouseLeave={() => handleChangeImage(data.cityLogo, setCityUrl)}
                 alt='city'
             />
             <img
@@ -51,6 +47,8 @@ export const MainPage = () => {
                 src={bayernURL}
                 height={200}
                 width={200}
+                onMouseOver={() => handleChangeImage(data.bayernTeam, setBayernURL)}
+                onMouseLeave={() => handleChangeImage(data.bayernLogo, setBayernURL)}
                 alt='bayern'
             />
             <br/>
@@ -59,21 +57,27 @@ export const MainPage = () => {
                 src={chelseaURL}
                 height={200}
                 width={200}
-                alt='barca'
+                onMouseOver={() => handleChangeImage(data.chelseaTeam, setChelseaURL)}
+                onMouseLeave={() => handleChangeImage(data.chelseaLogo, setChelseaURL)}
+                alt='chelsea'
             />
             <img
                 className='inter-img'
                 src={interURL}
                 height={200}
                 width={200}
-                alt='city'
+                onMouseOver={() => handleChangeImage(data.interTeam, setInterURL)}
+                onMouseLeave={() => handleChangeImage(data.interLogo, setInterURL)}
+                alt='inter'
             />
             <img
                 className='brighton-img'
                 src={brightonURL}
                 height={200}
                 width={200}
-                alt='bayern'
+                onMouseOver={() => handleChangeImage(data.brightonTeam, setBrightonURL)}
+                onMouseLeave={() => handleChangeImage(data.brightonLogo, setBrightonURL)}
+                alt='brighton'
             />
             <br/>
             <img
@@ -81,21 +85,27 @@ export const MainPage = () => {
                 src={unitedURL}
                 height={200}
                 width={200}
-                alt='barca'
+                onMouseOver={() => handleChangeImage(data.unitedTeam, setUnitedURL)}
+                onMouseLeave={() => handleChangeImage(data.unitedLogo, setUnitedURL)}
+                alt='united'
             />
             <img
-                className='benfica-img'
-                src={benficaURL}
+                className='liverpool-img'
+                src={liverpoolURL}
                 height={200}
                 width={200}
-                alt='city'
+                onMouseOver={() => handleChangeImage(data.liverpoolTeam, setLiverpoolURL)}
+                onMouseLeave={() => handleChangeImage(data.liverpoolLogo, setLiverpoolURL)}
+                alt='liverpool'
             />
             <img
                 className='juventus-img'
                 src={juventusURL}
                 height={200}
                 width={200}
-                alt='bayern'
+                onMouseOver={() => handleChangeImage(data.juventusTeam, setJuventusURL)}
+                onMouseLeave={() => handleChangeImage(data.juventusLogo, setJuventusURL)}
+                alt='juventus'
             />
 
         </div>
